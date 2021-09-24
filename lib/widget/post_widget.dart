@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import "package:instagram/model/dummies_data.dart";
+import 'package:instagram/widget/comment_widget.dart';
 
 class PostWidget extends StatefulWidget {
   const PostWidget({Key? key}) : super(key: key);
@@ -64,7 +65,12 @@ class _PostWidgetState extends State<PostWidget> {
                     ),
                     IconButton(
                         onPressed: () {
-                          
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => CommentWidget(
+                                        post: posts[index],
+                                      )));
                         },
                         icon: Icon(Icons.chat_bubble_outline, size: 30)),
                     SizedBox(
@@ -115,12 +121,23 @@ class _PostWidgetState extends State<PostWidget> {
                             posts[index].comments[ind].username,
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
-                          Text(" ${posts[index].comments[ind].comments}")
+                          Text(" ${posts[index].comments[ind].comments}"),
                         ],
                       ),
                     );
                   },
                   itemCount: posts[index].comments.length,
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: 10, top: 5),
+                  child: Row(
+                    children: [
+                      Text(
+                        "${posts[index].createdAt}",
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 20,
