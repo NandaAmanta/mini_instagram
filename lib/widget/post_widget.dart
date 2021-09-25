@@ -133,7 +133,7 @@ class _PostWidgetState extends State<PostWidget> {
                   child: Row(
                     children: [
                       Text(
-                        "${posts[index].createdAt}",
+                        "${posts[index].createdAt.day}-${posts[index].createdAt.month}-${posts[index].createdAt.year}",
                         style: TextStyle(color: Colors.grey),
                       ),
                     ],

@@ -99,7 +99,7 @@ List<Post> posts = [
       Comment(
         username: accounts[1].username,
         profilePicUrl:
-            accounts[0].profile,
+            accounts[1].profile,
         comments: "pala kau kura kura, kucing ini",
         likes: [
           Like(
