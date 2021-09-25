@@ -42,10 +42,15 @@ class _PostWidgetState extends State<PostWidget> {
                         width: 10,
                       ),
                       Expanded(
-                          child: Text(
+                          child: Column(
+                            crossAxisAlignment:CrossAxisAlignment.start,
+                            children: [
+                            Text(
                         posts[index].username,
                         style: TextStyle(fontWeight: FontWeight.bold),
-                      )),
+                      ),
+                      Text(posts[index].location,style: TextStyle(fontSize: 12),)
+                          ],)),
                       IconButton(onPressed: () {}, icon: Icon(Icons.more_vert))
                     ],
                   ),
