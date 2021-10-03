@@ -52,6 +52,10 @@ class _CommentWidgetState extends State<CommentWidget> {
                 SizedBox(
                   width: 5,
                 ),
+                RichText(text:TextSpan(
+                  text:post.username,
+                  style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),))
+                ,
                 Text(
                   post.username,
                   style: TextStyle(fontWeight: FontWeight.bold),
